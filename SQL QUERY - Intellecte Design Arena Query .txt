@@ -1,0 +1,15 @@
+SELECT
+    CM.Customer_NAME, AM.ACCOUNT_BALANCE
+FROM
+    Customer_Master CM
+        JOIN
+    ACCOUNT_MASTER AM ON CM.CustomerId = AM.CUSTOMERId
+WHERE
+    3 > (SELECT
+            COUNT(DISTINCT AM2.ACCOUNT_BALANCE)
+        FROM
+            ACCOUNT_MASTER AM2
+        WHERE
+            AM2.ACCOUNT_BALANCE > AM1.ACCOUNT_BALANCE
+                AND AM.CustomerId = AM2.CUSTOMERId
+        );
