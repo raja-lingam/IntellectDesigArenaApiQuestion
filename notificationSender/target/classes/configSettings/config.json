@@ -1,0 +1,25 @@
+{
+    "sender": {
+        "EMAIL": {
+            "bean": "emailSender",
+            "conf": {
+                "vaildationBean": "formatChecker",
+                "regex" :  "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"
+            }
+        },
+        "SMS": {
+            "bean": "smsSender",
+            "conf": {
+                "vaildationBean": "formatChecker",
+                "regex" :  "^\\d{10}$"
+            }
+        },
+        "WHATSAPP": {
+            "bean": "whatsAppSender",
+            "conf": {
+                "vaildationBean": "formatChecker",
+                "regex" :  "^\\d{10}$"
+            }
+        }
+    }
+}
